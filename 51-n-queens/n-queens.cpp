@@ -11,19 +11,14 @@ public:
                 result.push_back(currentBoard);
                 return;
             }
-          
             for (int col = 0; col < n; ++col) {
                 if (colOccupied[col] + diagonalOccupied[row + col] + 
                     antiDiagonalOccupied[n - row + col] == 0) {
-                  
                     currentBoard[row][col] = 'Q';
-                  
                     colOccupied[col] = 1;
                     diagonalOccupied[row + col] = 1;
                     antiDiagonalOccupied[n - row + col] = 1;
-                  
                     backtrack(row + 1);
-
                     colOccupied[col] = 0;
                     diagonalOccupied[row + col] = 0;
                     antiDiagonalOccupied[n - row + col] = 0;
@@ -32,7 +27,6 @@ public:
             }
         };
         backtrack(0);
-      
         return result;
     }
 };
