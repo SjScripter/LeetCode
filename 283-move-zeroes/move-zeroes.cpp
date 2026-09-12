@@ -1,27 +1,27 @@
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        int c = 0;
-        vector<int> tt;
+        int i =0;
+        int j =0;
+        int c =0;
+        vector<int>ans;
 
-        for(int i= 0;i<nums.size();i++){
-
+        for(int i=0;i<nums.size();i++){
             if(nums[i] == 0){
-                c++;
+                c= c+1;
             }
             else{
-
-                tt.push_back(nums[i]);
-
+                ans.push_back(nums[i]);
             }
-
-
         }
-        while(c !=0){
-            tt.push_back(0);
+
+        while(c != 0){
+            ans.push_back(0);
             c--;
         }
-        nums = tt;
+
+        nums = ans;
+
 
         
     }
